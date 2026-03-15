@@ -1,0 +1,90 @@
+.header-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  
+  h1 {
+    margin: 0;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.loading-shade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.error-card {
+  border-color: var(--mat-sys-error);
+  margin-bottom: 24px;
+
+  .error-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--mat-sys-error);
+    font-weight: 500;
+  }
+}
+
+.detail-card {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--mat-sys-surface-container);
+
+  .card-hero {
+    height: 200px;
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-icon {
+      font-size: 96px;
+      height: 96px;
+      width: 96px;
+      opacity: 0.8;
+    }
+  }
+
+  .content-header {
+    margin-top: 24px;
+    padding: 0 24px;
+    display: block; // Mat-card-header is row by default
+    
+    .mat-display-1 {
+      margin-bottom: 8px;
+    }
+  }
+
+  .text-muted {
+    color: var(--mat-sys-outline);
+  }
+
+  .content-body {
+    padding: 24px;
+    
+    h3 {
+      margin-top: 0;
+      color: var(--mat-sys-primary);
+    }
+
+    p {
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  }
+
+  .action-buttons {
+    padding: 16px 24px 24px;
+    gap: 16px;
+  }
+}

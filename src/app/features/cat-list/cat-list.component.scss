@@ -1,0 +1,101 @@
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  
+  h1 {
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.cat-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--mat-sys-surface-container);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .cat-header-image {
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    color: var(--mat-sys-outline);
+    margin-top: 16px;
+    height: 4.5em; /* 3 lines roughly */
+  }
+}
+
+.loading-shade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  background: var(--mat-sys-surface-container-low);
+  border-radius: 16px;
+  border: 1px dashed var(--mat-sys-outline-variant);
+
+  .empty-icon {
+    font-size: 64px;
+    height: 64px;
+    width: 64px;
+    color: var(--mat-sys-outline-variant);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    color: var(--mat-sys-on-surface);
+  }
+
+  p {
+    color: var(--mat-sys-outline);
+    margin-bottom: 24px;
+  }
+}
+
+.error-card {
+  border-color: var(--mat-sys-error);
+  margin-bottom: 24px;
+
+  .error-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--mat-sys-error);
+    font-weight: 500;
+  }
+}

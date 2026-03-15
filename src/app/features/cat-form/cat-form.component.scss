@@ -1,0 +1,80 @@
+.header-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  
+  h1 {
+    margin: 0;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.loading-shade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--mat-sys-surface-container);
+  
+  mat-card-header {
+    margin-bottom: 24px;
+  }
+}
+
+.form-header-image {
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.cat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+
+  .button-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.btn-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mat-sys-error);
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--mat-sys-error);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--mat-sys-error) 10%, transparent);
+}

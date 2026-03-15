@@ -1,0 +1,71 @@
+<div class="header-actions">
+  <button mat-icon-button (click)="goBack()" aria-label="Go back">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h1 class="mat-headline-2">{{ isEditMode ? 'Edit Cat' : 'New Cat' }}</h1>
+  <div class="spacer"></div>
+</div>
+
+@if (store.loading() && isEditMode && !form.dirty) {
+  <div class="loading-shade">
+    <mat-spinner></mat-spinner>
+  </div>
+} @else {
+  <mat-card appearance="outlined" class="form-card">
+    <mat-card-header>
+      <div mat-card-avatar class="form-header-image"><mat-icon>edit_square</mat-icon></div>
+      <mat-card-title>{{ isEditMode ? 'Update details' : 'Add new feline friend' }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- We only show errors if they relate to fetching or global errors, ignoring standard loading errors if we already act-->
+      @if (store.error()) {
+        <div class="error-message">
+          <mat-icon color="warn">error</mat-icon>
+          <span>{{ store.error() }}</span>
+        </div>
+      }
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="cat-form">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="E.g. Garfield" required>
+          @if (form.get('name')?.hasError('required')) {
+            <mat-error>Name is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" placeholder="E.g. 5 Years or 2 Months" required>
+          @if (form.get('age')?.hasError('required')) {
+            <mat-error>Age is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" rows="5" placeholder="Describe the cat..." required></textarea>
+          @if (form.get('description')?.hasError('required')) {
+            <mat-error>Description is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-button type="button" (click)="goBack()">Cancel</button>
+          <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid || store.loading()">
+            <span class="button-content">
+              @if (store.loading()) {
+                <mat-spinner diameter="20" class="btn-spinner"></mat-spinner>
+              }
+              <mat-icon>{{ isEditMode ? 'save' : 'add' }}</mat-icon>
+              {{ isEditMode ? 'Save Changes' : 'Create Cat' }}
+            </span>
+          </button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+}
