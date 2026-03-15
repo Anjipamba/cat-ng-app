@@ -1,4 +1,5 @@
-Cat NG Application
+# Cat NG Application
+Angular Cat Management Application
 
 A modern Angular application that consumes the Cat API and provides a simple interface to manage cats (Create, View, Update, Delete).
 
@@ -13,7 +14,7 @@ This project demonstrates modern Angular architecture and best practices using:
 
 The goal of the assignment was to build a frontend application that consumes the provided Cat API and demonstrates clean architecture, maintainable code, and modern Angular patterns.
 
-Tech Stack:
+# Tech Stack:
     Technology	Purpose
     Angular 21	Frontend framework
     Angular Signals	State management
@@ -23,17 +24,17 @@ Tech Stack:
     Node.js	Runtime for proxy server
     Application Features
 
-The application implements all API endpoints:
+# The application implements all API endpoints:
 
- Feature	Endpoint
+ # Feature	Endpoint
     List all cats	GET /list
     View cat details	GET /list?id=
     Create a new cat	POST /create
     Update cat	PUT /update?id=
     Delete cat	DELETE /delete?id=
 
- UI Features:
-  Responsive Material card grid
+ # UI Features:
+  # Responsive Material card grid
     Cat detail view
     Create/Edit cat form
     Loading states
@@ -42,7 +43,7 @@ The application implements all API endpoints:
     Confirmation dialog for delete
     Project Architecture
 
-The application follows a feature-based architecture commonly used in large Angular applications.
+# The application follows a feature-based architecture commonly used in large Angular applications.
     src/
     └── app/
         ├── core/
@@ -68,7 +69,7 @@ The application follows a feature-based architecture commonly used in large Angu
         ├── app.config.ts
         └── app.component.ts
 
-Architecture Explanation
+# Architecture Explanation
     core/
         Contains application-wide logic:
     API services
@@ -84,7 +85,7 @@ Architecture Explanation
     shared/
         Reusable UI components.
 
-Responsibilities:
+# Responsibilities:
     Layer	    Responsibility
     Component	UI rendering
     Store	    State management
@@ -92,7 +93,7 @@ Responsibilities:
 
 This separation keeps the UI clean and maintainable.
 
-Proxy Server
+# Proxy Server
 
 While implementing the application, the Create / Update / Delete endpoints returned a 502 error when called directly from the browser due to how the API Gateway handles browser-origin requests.
 
@@ -164,7 +165,7 @@ Cats are displayed in a card grid layout as required by the assignment.
     Zoneless change detection
     Material UI
 
-Notes:
+# Notes:
     This project focuses on:
     maintainable Angular architecture
     clean separation of concerns
